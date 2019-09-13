@@ -16,15 +16,15 @@ open class AsynchronousOperation: Operation {
         fileprivate var keyPath: String { return "is" + self.rawValue }
     }
 
-    override public var isAsynchronous: Bool {
+    override open var isAsynchronous: Bool {
         return true
     }
 
-    override public var isExecuting: Bool {
+    override open var isExecuting: Bool {
         return state == .executing
     }
 
-    override public var isFinished: Bool {
+    override open var isFinished: Bool {
         return state == .finished
     }
 
@@ -48,7 +48,7 @@ open class AsynchronousOperation: Operation {
         return operationQueue
     }()
 
-    override public func start() {
+    override open func start() {
         if self.isCancelled {
             state = .finished
         } else {
@@ -69,7 +69,7 @@ open class AsynchronousOperation: Operation {
         if self.debugMode { print("AsyncOperation \(self.name ?? "") -  Main function Ended") }
     }
 
-    override public func cancel() {
+    override open func cancel() {
         super.cancel()
         operationQueue.cancelAllOperations()
     }
