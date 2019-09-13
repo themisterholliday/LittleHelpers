@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16BD45E4232C42A10085AD1C /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45DE232C42A10085AD1C /* Navigator.swift */; };
-		16BD45E5232C42A10085AD1C /* ObservableManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45E0232C42A10085AD1C /* ObservableManagerProtocol.swift */; };
-		16BD45E6232C42A10085AD1C /* ObservationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45E1232C42A10085AD1C /* ObservationToken.swift */; };
-		16BD45E7232C42A10085AD1C /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45E2232C42A10085AD1C /* LinkedList.swift */; };
-		16BD45E8232C42A10085AD1C /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45E3232C42A10085AD1C /* ChildViewController.swift */; };
-		16BD45EB232C4B600085AD1C /* CompletionOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45E9232C4B5F0085AD1C /* CompletionOperationQueue.swift */; };
-		16BD45EC232C4B600085AD1C /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45EA232C4B5F0085AD1C /* AsyncOperation.swift */; };
+		16BD45F7232C4DCB0085AD1C /* ObservableManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45EF232C4DCB0085AD1C /* ObservableManagerProtocol.swift */; };
+		16BD45F8232C4DCB0085AD1C /* ObservationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45F0232C4DCB0085AD1C /* ObservationToken.swift */; };
+		16BD45F9232C4DCB0085AD1C /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45F1232C4DCB0085AD1C /* Navigator.swift */; };
+		16BD45FA232C4DCB0085AD1C /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45F2232C4DCB0085AD1C /* LinkedList.swift */; };
+		16BD45FB232C4DCB0085AD1C /* CompletionOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45F4232C4DCB0085AD1C /* CompletionOperationQueue.swift */; };
+		16BD45FC232C4DCB0085AD1C /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45F5232C4DCB0085AD1C /* AsyncOperation.swift */; };
+		16BD45FD232C4DCB0085AD1C /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45F6232C4DCB0085AD1C /* ChildViewController.swift */; };
 		190355ABEC902CD6F1A0FBA9AB5CB549 /* Pods-LittleHelpers_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E47A5B5B4268F1A7045740EACD1754AB /* Pods-LittleHelpers_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C8E898109C4B5C90F58AFE25BB7F284 /* LittleHelpers-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F01C4413036A4CE9B721338F28356B1 /* LittleHelpers-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EAB7D2B43B1232BED920E3E5C02B0A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
@@ -46,13 +46,13 @@
 		0447C4EAF4890BC1DCDCEA16A9D58E4E /* Pods-LittleHelpers_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LittleHelpers_Tests-Info.plist"; sourceTree = "<group>"; };
 		0C624AAC236D6C59F40273B3730CC473 /* Pods-LittleHelpers_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LittleHelpers_Example.modulemap"; sourceTree = "<group>"; };
 		0F401A1BCE869143D48DE6A55C7CA623 /* LittleHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LittleHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		16BD45DE232C42A10085AD1C /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		16BD45E0232C42A10085AD1C /* ObservableManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableManagerProtocol.swift; sourceTree = "<group>"; };
-		16BD45E1232C42A10085AD1C /* ObservationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
-		16BD45E2232C42A10085AD1C /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
-		16BD45E3232C42A10085AD1C /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
-		16BD45E9232C4B5F0085AD1C /* CompletionOperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionOperationQueue.swift; sourceTree = "<group>"; };
-		16BD45EA232C4B5F0085AD1C /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		16BD45EF232C4DCB0085AD1C /* ObservableManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableManagerProtocol.swift; sourceTree = "<group>"; };
+		16BD45F0232C4DCB0085AD1C /* ObservationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
+		16BD45F1232C4DCB0085AD1C /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Navigator.swift; path = LittleHelpers/Classes/Navigator.swift; sourceTree = "<group>"; };
+		16BD45F2232C4DCB0085AD1C /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedList.swift; path = LittleHelpers/Classes/LinkedList.swift; sourceTree = "<group>"; };
+		16BD45F4232C4DCB0085AD1C /* CompletionOperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionOperationQueue.swift; sourceTree = "<group>"; };
+		16BD45F5232C4DCB0085AD1C /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		16BD45F6232C4DCB0085AD1C /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewController.swift; path = LittleHelpers/Classes/ChildViewController.swift; sourceTree = "<group>"; };
 		1FA59569E873538BEA6A913C3F6368E7 /* Pods-LittleHelpers_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LittleHelpers_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		28E1972A921E9BCE6DE35E9AAA2A6BD9 /* Pods-LittleHelpers_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LittleHelpers_Tests-dummy.m"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -119,22 +119,24 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		16BD45DF232C42A10085AD1C /* Observable */ = {
+		16BD45EE232C4DCB0085AD1C /* Observable */ = {
 			isa = PBXGroup;
 			children = (
-				16BD45E0232C42A10085AD1C /* ObservableManagerProtocol.swift */,
-				16BD45E1232C42A10085AD1C /* ObservationToken.swift */,
+				16BD45EF232C4DCB0085AD1C /* ObservableManagerProtocol.swift */,
+				16BD45F0232C4DCB0085AD1C /* ObservationToken.swift */,
 			);
-			path = Observable;
+			name = Observable;
+			path = LittleHelpers/Classes/Observable;
 			sourceTree = "<group>";
 		};
-		16BD45ED232C4B640085AD1C /* AsyncOperations */ = {
+		16BD45F3232C4DCB0085AD1C /* AsyncOperations */ = {
 			isa = PBXGroup;
 			children = (
-				16BD45EA232C4B5F0085AD1C /* AsyncOperation.swift */,
-				16BD45E9232C4B5F0085AD1C /* CompletionOperationQueue.swift */,
+				16BD45F4232C4DCB0085AD1C /* CompletionOperationQueue.swift */,
+				16BD45F5232C4DCB0085AD1C /* AsyncOperation.swift */,
 			);
-			path = AsyncOperations;
+			name = AsyncOperations;
+			path = LittleHelpers/Classes/AsyncOperations;
 			sourceTree = "<group>";
 		};
 		3271C3DF143CE9D0822E80AB537BADAA /* Pod */ = {
@@ -215,11 +217,11 @@
 		CC27E166D8A60A11CF338B53D76421A7 /* LittleHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				16BD45ED232C4B640085AD1C /* AsyncOperations */,
-				16BD45E3232C42A10085AD1C /* ChildViewController.swift */,
-				16BD45E2232C42A10085AD1C /* LinkedList.swift */,
-				16BD45DE232C42A10085AD1C /* Navigator.swift */,
-				16BD45DF232C42A10085AD1C /* Observable */,
+				16BD45F3232C4DCB0085AD1C /* AsyncOperations */,
+				16BD45F6232C4DCB0085AD1C /* ChildViewController.swift */,
+				16BD45F2232C4DCB0085AD1C /* LinkedList.swift */,
+				16BD45F1232C4DCB0085AD1C /* Navigator.swift */,
+				16BD45EE232C4DCB0085AD1C /* Observable */,
 				3271C3DF143CE9D0822E80AB537BADAA /* Pod */,
 				B6754513947B7760DEDE0D2A7672453C /* Support Files */,
 			);
@@ -403,14 +405,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16BD45E5232C42A10085AD1C /* ObservableManagerProtocol.swift in Sources */,
+				16BD45F7232C4DCB0085AD1C /* ObservableManagerProtocol.swift in Sources */,
+				16BD45F9232C4DCB0085AD1C /* Navigator.swift in Sources */,
+				16BD45FA232C4DCB0085AD1C /* LinkedList.swift in Sources */,
+				16BD45FB232C4DCB0085AD1C /* CompletionOperationQueue.swift in Sources */,
 				6A5B0776019A2A404D9A2CF479177ECA /* LittleHelpers-dummy.m in Sources */,
-				16BD45E7232C42A10085AD1C /* LinkedList.swift in Sources */,
-				16BD45E6232C42A10085AD1C /* ObservationToken.swift in Sources */,
-				16BD45EB232C4B600085AD1C /* CompletionOperationQueue.swift in Sources */,
-				16BD45E4232C42A10085AD1C /* Navigator.swift in Sources */,
-				16BD45EC232C4B600085AD1C /* AsyncOperation.swift in Sources */,
-				16BD45E8232C42A10085AD1C /* ChildViewController.swift in Sources */,
+				16BD45F8232C4DCB0085AD1C /* ObservationToken.swift in Sources */,
+				16BD45FC232C4DCB0085AD1C /* AsyncOperation.swift in Sources */,
+				16BD45FD232C4DCB0085AD1C /* ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
