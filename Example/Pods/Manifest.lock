@@ -1,0 +1,16 @@
+PODS:
+  - LittleHelpers (0.1.0)
+
+DEPENDENCIES:
+  - LittleHelpers (from `../`)
+
+EXTERNAL SOURCES:
+  LittleHelpers:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LittleHelpers: e44c158eab1edb750b51aa0b2507aa18d3d9daa8
+
+PODFILE CHECKSUM: fd64810ac57d35dd60df4af1ff9cd45f0df7be14
+
+COCOAPODS: 1.7.5

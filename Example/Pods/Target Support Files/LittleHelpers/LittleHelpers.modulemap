@@ -1,0 +1,6 @@
+framework module LittleHelpers {
+  umbrella header "LittleHelpers-umbrella.h"
+
+  export *
+  module * { export * }
+}
