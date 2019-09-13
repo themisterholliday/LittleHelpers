@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LittleHelpers_Example' do
+  pod 'LittleHelpers', :path => '../'
+
+  target 'LittleHelpers_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
