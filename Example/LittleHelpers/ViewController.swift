@@ -174,3 +174,54 @@ struct Book {
     var isAvailable: Bool
     var price: Int
 }
+
+
+fileprivate class AsyncOperationExample: AsynchronousOperation {
+    override func main() {
+        super.main()
+        if self.debugMode { print("AsyncOperationExample \(self.name ?? "") - Called async inside operation") }
+
+        // Here write the async operation
+        operationQueue.addOperation {
+            // Making delay
+            sleep(5)
+            if self.debugMode { print("AsyncOperationExample \(self.name ?? "") - async response came") }
+            // Set the state to .finished once your operation completed
+            self.state = .finished
+        }
+    }
+}
+
+fileprivate class AsyncOperationQueueExample {
+    private lazy var asyncOperationQueue: CompletionOperationQueue = {
+        let asyncOperationQueue = CompletionOperationQueue { [weak self] in
+            self?.completedQueue()
+        }
+        asyncOperationQueue.maxConcurrentOperationCount = 3
+        return asyncOperationQueue
+    }()
+
+    init() {
+        print("AsyncOperationExample Before Total operations: \(asyncOperationQueue.operationCount)")
+
+        var previousOperation: AsyncOperationExample?
+        for index in 1...10 {
+            let operation = AsyncOperationExample()
+            operation.name = "--\(index)--"
+            if let previous = previousOperation {
+                operation.addDependency(previous)
+            }
+            asyncOperationQueue.addOperation(operation)
+
+            previousOperation = operation
+        }
+
+
+        print("AsyncOperationExample After Total operations: \(asyncOperationQueue.operationCount)")
+        print("AsyncOperationExample After waiting for operations: \(asyncOperationQueue.operationCount)")
+    }
+
+    private func completedQueue() {
+        print("Completed operation queue")
+    }
+}
