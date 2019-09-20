@@ -16,7 +16,7 @@ public extension UIViewController {
         child.didMove(toParent: self)
     }
 
-    func removeFromParent() {
+    func remove() {
         // Just to be safe, we check that this view controller
         // is actually added to a parent before removing it.
         guard parent != nil else {
