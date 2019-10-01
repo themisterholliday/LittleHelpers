@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1669C13C233F03820016AEBA /* SimplePagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669C13B233F03820016AEBA /* SimplePagerViewController.swift */; };
 		16852D3B23343D2E005133D0 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16852D3A23343D2E005133D0 /* Validator.swift */; };
 		16BD45F7232C4DCB0085AD1C /* ObservableManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45EF232C4DCB0085AD1C /* ObservableManagerProtocol.swift */; };
 		16BD45F8232C4DCB0085AD1C /* ObservationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD45F0232C4DCB0085AD1C /* ObservationToken.swift */; };
@@ -47,6 +48,7 @@
 		0447C4EAF4890BC1DCDCEA16A9D58E4E /* Pods-LittleHelpers_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LittleHelpers_Tests-Info.plist"; sourceTree = "<group>"; };
 		0C624AAC236D6C59F40273B3730CC473 /* Pods-LittleHelpers_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LittleHelpers_Example.modulemap"; sourceTree = "<group>"; };
 		0F401A1BCE869143D48DE6A55C7CA623 /* LittleHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LittleHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1669C13B233F03820016AEBA /* SimplePagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePagerViewController.swift; sourceTree = "<group>"; };
 		16852D3A23343D2E005133D0 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		16BD45EF232C4DCB0085AD1C /* ObservableManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableManagerProtocol.swift; sourceTree = "<group>"; };
 		16BD45F0232C4DCB0085AD1C /* ObservationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				3271C3DF143CE9D0822E80AB537BADAA /* Pod */,
 				B6754513947B7760DEDE0D2A7672453C /* Support Files */,
 				16852D3A23343D2E005133D0 /* Validator.swift */,
+				1669C13B233F03820016AEBA /* SimplePagerViewController.swift */,
 			);
 			name = LittleHelpers;
 			path = ../..;
@@ -415,6 +418,7 @@
 				16BD45FB232C4DCB0085AD1C /* CompletionOperationQueue.swift in Sources */,
 				6A5B0776019A2A404D9A2CF479177ECA /* LittleHelpers-dummy.m in Sources */,
 				16BD45F8232C4DCB0085AD1C /* ObservationToken.swift in Sources */,
+				1669C13C233F03820016AEBA /* SimplePagerViewController.swift in Sources */,
 				16BD45FC232C4DCB0085AD1C /* AsyncOperation.swift in Sources */,
 				16BD45FD232C4DCB0085AD1C /* ChildViewController.swift in Sources */,
 			);
@@ -505,7 +509,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/LittleHelpers/LittleHelpers-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/LittleHelpers/LittleHelpers-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/LittleHelpers/LittleHelpers.modulemap";
 				PRODUCT_MODULE_NAME = LittleHelpers;
@@ -638,7 +642,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/LittleHelpers/LittleHelpers-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/LittleHelpers/LittleHelpers-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/LittleHelpers/LittleHelpers.modulemap";
 				PRODUCT_MODULE_NAME = LittleHelpers;

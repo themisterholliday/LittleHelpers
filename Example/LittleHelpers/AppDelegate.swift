@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LittleHelpers
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let vc = SimplePagerViewController(viewControllers: [RedViewController(), GreenViewController(), BlueViewController()])
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
         return true
     }
 
@@ -44,3 +48,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+
+class RedViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .red
+    }
+}
+
+class GreenViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .green
+    }
+}
+
+class BlueViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .blue
+    }
+}
