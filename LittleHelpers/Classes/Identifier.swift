@@ -8,61 +8,61 @@
 import Foundation
 
 // https://swiftbysundell.com/articles/type-safe-identifiers-in-swift/
-protocol Identifiable {
-    associatedtype RawIdentifier: Codable = String
+public protocol Identifiable {
+    associatedtype RawIdentifier: Codable & Hashable = String
 
     var id: Identifier<Self> { get }
 }
 
-struct Identifier<Value: Identifiable> {
-    let rawValue: Value.RawIdentifier
+public struct Identifier<Value: Identifiable> {
+    public let rawValue: Value.RawIdentifier
 
-    init(rawValue: Value.RawIdentifier) {
+    public init(rawValue: Value.RawIdentifier) {
         self.rawValue = rawValue
     }
 }
 
 // MARK: - ExpressibleByStringLiteral conformance
 extension Identifier: ExpressibleByStringLiteral where Value.RawIdentifier == String {
-    typealias StringLiteralType = String
+    public typealias StringLiteralType = String
 
-    init(stringLiteral value: Self.StringLiteralType) {
+    public init(stringLiteral value: Self.StringLiteralType) {
         rawValue = value
     }
 }
 
 extension Identifier: ExpressibleByUnicodeScalarLiteral where Value.RawIdentifier == String {
-    typealias UnicodeScalarLiteralType = String
+    public typealias UnicodeScalarLiteralType = String
 }
 
 extension Identifier: ExpressibleByExtendedGraphemeClusterLiteral where Value.RawIdentifier == String {
-    typealias ExtendedGraphemeClusterLiteralType = String
+    public typealias ExtendedGraphemeClusterLiteralType = String
 }
 
 // MARK: - ExpressibleByIntegerLiteral Conformance
 extension Identifier: ExpressibleByIntegerLiteral where Value.RawIdentifier == Int {
-    typealias IntegerLiteralType = Int
+    public typealias IntegerLiteralType = Int
 
-    init(integerLiteral value: Self.IntegerLiteralType) {
+    public init(integerLiteral value: Self.IntegerLiteralType) {
         rawValue = value
     }
 }
 
 // MARK: - CustomStringConvertible
 extension Identifier: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         return String(describing: rawValue)
     }
 }
 
 // MARK: Codable
 extension Identifier: Codable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         rawValue = try container.decode(Value.RawIdentifier.self)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(rawValue)
     }
@@ -91,20 +91,21 @@ internal protocol Database {
     func record(withID id: Identifier<T>) -> T?
 }
 
-internal protocol ModelLoader {
+public protocol ModelLoader {
     associatedtype T: Identifiable
 
-    typealias Handler<T> = (Result<T, Error>) -> Void
+    var cache: Cache<T.RawIdentifier, T> { get }
 
-    func loadModel(withID id: Identifier<T>, then handler: @escaping Handler<T>)
+    func loadModel(withID id: Identifier<T>) throws -> T
+    func saveModel(withID id: Identifier<T>) throws
 }
 
-enum ModelLoaderError<T: Identifiable>: Error {
+public enum ModelLoaderError<T: Identifiable>: Error {
     case couldNotFindModelWithID(id: Identifier<T>)
 }
 
 extension ModelLoaderError: LocalizedError {
-    var errorDescription: String? {
+    public var errorDescription: String? {
         let className = String(describing: T.self)
         
         switch self {

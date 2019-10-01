@@ -8,13 +8,13 @@
 import Foundation
 
 // https://www.swiftbysundell.com/articles/caching-in-swift/
-final class Cache<Key: Hashable, Value> {
+public final class Cache<Key: Hashable, Value> {
     private let wrapped = NSCache<WrappedKey, Entry>()
     private let dateProvider: () -> Date
     private let entryLifetime: TimeInterval
     private let keyTracker = KeyTracker()
 
-    init(dateProvider: @escaping () -> Date = Date.init,
+    public init(dateProvider: @escaping () -> Date = Date.init,
          entryLifetime: TimeInterval = 12 * 60 * 60,
          maximumEntryCount: Int = 50) {
         self.dateProvider = dateProvider
@@ -23,14 +23,14 @@ final class Cache<Key: Hashable, Value> {
         wrapped.delegate = keyTracker
     }
 
-    func insert(_ value: Value, forKey key: Key) {
+    public func insert(_ value: Value, forKey key: Key) {
         let date = dateProvider().addingTimeInterval(entryLifetime)
         let entry = Entry(key: key, value: value, expirationDate: date)
         wrapped.setObject(entry, forKey: WrappedKey(key))
         keyTracker.keys.insert(key)
     }
 
-    func value(forKey key: Key) -> Value? {
+    public func value(forKey key: Key) -> Value? {
         guard let entry = wrapped.object(forKey: WrappedKey(key)) else {
             return nil
         }
@@ -44,7 +44,7 @@ final class Cache<Key: Hashable, Value> {
         return entry.value
     }
 
-    func removeValue(forKey key: Key) {
+    public func removeValue(forKey key: Key) {
         wrapped.removeObject(forKey: WrappedKey(key))
     }
 }
@@ -81,7 +81,7 @@ private extension Cache {
     }
 }
 
-extension Cache {
+public extension Cache {
     subscript(key: Key) -> Value? {
         get { return value(forKey: key) }
         set {
@@ -137,7 +137,7 @@ private extension Cache {
 }
 
 extension Cache: Codable where Key: Codable, Value: Codable {
-    convenience init(from decoder: Decoder) throws {
+    public convenience init(from decoder: Decoder) throws {
         self.init()
 
         let container = try decoder.singleValueContainer()
@@ -145,21 +145,21 @@ extension Cache: Codable where Key: Codable, Value: Codable {
         entries.forEach(insert)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(keyTracker.keys.compactMap(entry))
     }
 }
 
 extension Cache where Key: Codable, Value: Codable {
-    func saveToDisk(withName name: String, using fileManager: FileManager = .default) throws {
+    public func saveToDisk(withName name: String, using fileManager: FileManager = .default) throws {
         let folderURLs = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)
         let fileURL = folderURLs[0].appendingPathComponent(name + ".cache")
         let data = try JSONEncoder().encode(self)
         try data.write(to: fileURL)
     }
 
-    static func loadFromDisk(name: String, using fileManager: FileManager = .default) throws -> Cache {
+    public static func loadFromDisk(name: String, using fileManager: FileManager = .default) throws -> Cache {
         let folderURLs = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)
         let fileURL = folderURLs[0].appendingPathComponent(name + ".cache")
         guard let data = fileManager.contents(atPath: fileURL.path) else {
@@ -203,24 +203,23 @@ private class ArticleDatabase: Database {
 
 private class ArticleLoader: ModelLoader {
     typealias T = Article
-    typealias Handler = (Result<Article, Error>) -> Void
 
     private let cacheFileName = "articles"
 
-    private lazy var cache = {
+    lazy var cache: Cache<Article.RawIdentifier, Article> = {
         return (try? Cache<Article.RawIdentifier, Article>.loadFromDisk(name: cacheFileName)) ?? Cache<Article.RawIdentifier, Article>()
     }()
 
-    func saveArticle() {
-        let article = Article(id: "1", name: "article 1")
-        cache.insert(article, forKey: article.id.rawValue)
-        try? cache.saveToDisk(withName: cacheFileName)
+    func loadModel(withID id: Identifier<Article>) throws -> Article {
+        guard let cached = cache[id.rawValue] else {
+            throw ModelLoaderError<T>.couldNotFindModelWithID(id: id)
+        }
+        return cached
     }
 
-    func loadModel(withID id: Identifier<Article>, then handler: @escaping (Result<Article, Error>) -> Void) {
-        if let cached = cache[id.rawValue] {
-            return handler(.success(cached))
-        }
-        return handler(.failure(ModelLoaderError<T>.couldNotFindModelWithID(id: id)))
+    func saveModel(withID id: Identifier<Article>) throws {
+        let article = Article(id: id, name: "article 1")
+        cache.insert(article, forKey: article.id.rawValue)
+        try cache.saveToDisk(withName: cacheFileName)
     }
 }
