@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LittleHelpers'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'LittleHelpers is a collection of classes and protocols that I often use.'
   s.homepage         = 'https://github.com/themisterholliday/LittleHelpers'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/themisterholliday/LittleHelpers.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/TheMrHolliday'
 
-  s.ios.deployment_target = '10.3'
+  s.ios.deployment_target = '9.3'
   s.swift_version = '5.0'
 
   s.source_files = 'LittleHelpers/Classes/**/*'
