@@ -48,8 +48,8 @@
 		0447C4EAF4890BC1DCDCEA16A9D58E4E /* Pods-LittleHelpers_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LittleHelpers_Tests-Info.plist"; sourceTree = "<group>"; };
 		0C624AAC236D6C59F40273B3730CC473 /* Pods-LittleHelpers_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LittleHelpers_Example.modulemap"; sourceTree = "<group>"; };
 		0F401A1BCE869143D48DE6A55C7CA623 /* LittleHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LittleHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1669C13B233F03820016AEBA /* SimplePagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePagerViewController.swift; sourceTree = "<group>"; };
-		16852D3A23343D2E005133D0 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		1669C13B233F03820016AEBA /* SimplePagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SimplePagerViewController.swift; path = LittleHelpers/Classes/SimplePagerViewController.swift; sourceTree = "<group>"; };
+		16852D3A23343D2E005133D0 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = LittleHelpers/Classes/Validator.swift; sourceTree = "<group>"; };
 		16BD45EF232C4DCB0085AD1C /* ObservableManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableManagerProtocol.swift; sourceTree = "<group>"; };
 		16BD45F0232C4DCB0085AD1C /* ObservationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
 		16BD45F1232C4DCB0085AD1C /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Navigator.swift; path = LittleHelpers/Classes/Navigator.swift; sourceTree = "<group>"; };
