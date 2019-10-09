@@ -77,8 +77,8 @@ protocol ListViewControllerFactoryProtocol {
 //}
 
 class BookDatabase {
-    private var books = List<Book>()
-    private var nodes = [String : List<Book>.Node]()
+    private var books = LinkedList<Book>()
+    private var nodes = [String : LinkedList<Book>.Node]()
 
     init() {
         let books = [

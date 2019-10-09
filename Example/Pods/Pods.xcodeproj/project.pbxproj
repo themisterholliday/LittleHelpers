@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1605AABE234E607600F7BC7A /* URLRequestRetryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1605AABD234E607600F7BC7A /* URLRequestRetryManager.swift */; };
 		1642323E2343E7040062BF41 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642323D2343E7040062BF41 /* Cache.swift */; };
 		164232402343F21F0062BF41 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642323F2343F21F0062BF41 /* Identifier.swift */; };
 		1669C13C233F03820016AEBA /* SimplePagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669C13B233F03820016AEBA /* SimplePagerViewController.swift */; };
@@ -50,6 +51,7 @@
 		0447C4EAF4890BC1DCDCEA16A9D58E4E /* Pods-LittleHelpers_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LittleHelpers_Tests-Info.plist"; sourceTree = "<group>"; };
 		0C624AAC236D6C59F40273B3730CC473 /* Pods-LittleHelpers_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LittleHelpers_Example.modulemap"; sourceTree = "<group>"; };
 		0F401A1BCE869143D48DE6A55C7CA623 /* LittleHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LittleHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1605AABD234E607600F7BC7A /* URLRequestRetryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestRetryManager.swift; sourceTree = "<group>"; };
 		1642323D2343E7040062BF41 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = LittleHelpers/Classes/Cache.swift; sourceTree = "<group>"; };
 		1642323F2343F21F0062BF41 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = LittleHelpers/Classes/Identifier.swift; sourceTree = "<group>"; };
 		1669C13B233F03820016AEBA /* SimplePagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SimplePagerViewController.swift; path = LittleHelpers/Classes/SimplePagerViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				1669C13B233F03820016AEBA /* SimplePagerViewController.swift */,
 				1642323D2343E7040062BF41 /* Cache.swift */,
 				1642323F2343F21F0062BF41 /* Identifier.swift */,
+				1605AABD234E607600F7BC7A /* URLRequestRetryManager.swift */,
 			);
 			name = LittleHelpers;
 			path = ../..;
@@ -424,6 +427,7 @@
 				1642323E2343E7040062BF41 /* Cache.swift in Sources */,
 				16BD45FB232C4DCB0085AD1C /* CompletionOperationQueue.swift in Sources */,
 				6A5B0776019A2A404D9A2CF479177ECA /* LittleHelpers-dummy.m in Sources */,
+				1605AABE234E607600F7BC7A /* URLRequestRetryManager.swift in Sources */,
 				16BD45F8232C4DCB0085AD1C /* ObservationToken.swift in Sources */,
 				1669C13C233F03820016AEBA /* SimplePagerViewController.swift in Sources */,
 				16BD45FC232C4DCB0085AD1C /* AsyncOperation.swift in Sources */,

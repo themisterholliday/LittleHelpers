@@ -9,14 +9,14 @@
 import Foundation
 
 // https://www.swiftbysundell.com/articles/picking-the-right-data-structure-in-swift/
-public struct List<Value> {
+public struct LinkedList<Value> {
     private(set) var firstNode: Node?
     private(set) var lastNode: Node?
 
     public init() {}
 }
 
-public extension List {
+public extension LinkedList {
     class Node {
         public var value: Value
         fileprivate(set) weak var previous: Node?
@@ -28,7 +28,7 @@ public extension List {
     }
 }
 
-extension List: Sequence {
+extension LinkedList: Sequence {
     public func makeIterator() -> AnyIterator<Value> {
         var node = firstNode
 
@@ -42,7 +42,7 @@ extension List: Sequence {
     }
 }
 
-public extension List {
+public extension LinkedList {
     @discardableResult
     mutating func append(_ value: Value) -> Node {
         let node = Node(value: value)

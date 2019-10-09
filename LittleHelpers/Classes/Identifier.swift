@@ -100,11 +100,11 @@ public protocol ModelLoader {
     func saveModel(withID id: Identifier<T>) throws
 }
 
-public enum ModelLoaderError<T: Identifiable>: Error {
+public enum IdentifiableModelError<T: Identifiable>: Error {
     case couldNotFindModelWithID(id: Identifier<T>)
 }
 
-extension ModelLoaderError: LocalizedError {
+extension IdentifiableModelError: LocalizedError {
     public var errorDescription: String? {
         let className = String(describing: T.self)
         

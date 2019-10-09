@@ -8,15 +8,19 @@
 import Foundation
 
 // https://www.swiftbysundell.com/articles/caching-in-swift/
+
+/// A class to cache any Codable type with entry lifetime as well as max entry count.
 public final class Cache<Key: Hashable, Value> {
     private let wrapped = NSCache<WrappedKey, Entry>()
     private let dateProvider: () -> Date
     private let entryLifetime: TimeInterval
     private let keyTracker = KeyTracker()
 
-    public init(dateProvider: @escaping () -> Date = Date.init,
-         entryLifetime: TimeInterval = 12 * 60 * 60,
-         maximumEntryCount: Int = 50) {
+    /// Init
+    /// - Parameter dateProvider: Date provider to create starting point to check against `entryLifetime`. Defaults to Date() and is a function for testing purposes.
+    /// - Parameter entryLifetime: The maximum time interval the entry will stay in the cache. Defaults to 12 hours.
+    /// - Parameter maximumEntryCount: The maximum entries this cache can hold. Defaults to 50.
+    public init(dateProvider: @escaping () -> Date = Date.init, entryLifetime: TimeInterval = 12 * 60 * 60, maximumEntryCount: Int = 50) {
         self.dateProvider = dateProvider
         self.entryLifetime = entryLifetime
         wrapped.countLimit = maximumEntryCount
@@ -44,8 +48,18 @@ public final class Cache<Key: Hashable, Value> {
         return entry.value
     }
 
+    public func allValues() -> [Value] {
+        let allKeys = keyTracker.keys
+        return allKeys.compactMap({ self.value(forKey: $0) })
+    }
+
     public func removeValue(forKey key: Key) {
         wrapped.removeObject(forKey: WrappedKey(key))
+    }
+
+    public func removeAllValues() {
+        let allKeys = keyTracker.keys
+        allKeys.forEach({ self.removeValue(forKey: $0) })
     }
 }
 
@@ -212,7 +226,7 @@ private class ArticleLoader: ModelLoader {
 
     func loadModel(withID id: Identifier<Article>) throws -> Article {
         guard let cached = cache[id.rawValue] else {
-            throw ModelLoaderError<T>.couldNotFindModelWithID(id: id)
+            throw IdentifiableModelError<T>.couldNotFindModelWithID(id: id)
         }
         return cached
     }
