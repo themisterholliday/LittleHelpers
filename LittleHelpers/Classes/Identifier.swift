@@ -68,6 +68,9 @@ extension Identifier: Codable {
     }
 }
 
+extension Identifier: Equatable {}
+extension Identifier: Hashable {}
+
 
 // MARK: - Example
 
