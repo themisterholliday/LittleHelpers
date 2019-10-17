@@ -27,4 +27,19 @@ public extension UIViewController {
         view.removeFromSuperview()
         removeFromParent()
     }
+
+    func embed(vc: UIViewController, in containerView: UIView) {
+        addChild(vc)
+        containerView.addSubview(vc.view)
+        didMove(toParent: self)
+
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            vc.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            vc.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            vc.view.topAnchor.constraint(equalTo: containerView.topAnchor),
+            vc.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            ])
+    }
 }
