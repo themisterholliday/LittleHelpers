@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1605AABE234E607600F7BC7A /* URLRequestRetryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1605AABD234E607600F7BC7A /* URLRequestRetryManager.swift */; };
 		162777252358F67400479D10 /* UIKitLivePreviewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162777242358F67400479D10 /* UIKitLivePreviewExtensions.swift */; };
+		163C05CC235943EB00F21EF8 /* UIControl+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C05CB235943EB00F21EF8 /* UIControl+Tap.swift */; };
 		1642323E2343E7040062BF41 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642323D2343E7040062BF41 /* Cache.swift */; };
 		164232402343F21F0062BF41 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642323F2343F21F0062BF41 /* Identifier.swift */; };
 		1669C13C233F03820016AEBA /* SimplePagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669C13B233F03820016AEBA /* SimplePagerViewController.swift */; };
@@ -54,6 +55,7 @@
 		0F401A1BCE869143D48DE6A55C7CA623 /* LittleHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LittleHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1605AABD234E607600F7BC7A /* URLRequestRetryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestRetryManager.swift; sourceTree = "<group>"; };
 		162777242358F67400479D10 /* UIKitLivePreviewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitLivePreviewExtensions.swift; sourceTree = "<group>"; };
+		163C05CB235943EB00F21EF8 /* UIControl+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Tap.swift"; sourceTree = "<group>"; };
 		1642323D2343E7040062BF41 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = LittleHelpers/Classes/Cache.swift; sourceTree = "<group>"; };
 		1642323F2343F21F0062BF41 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = LittleHelpers/Classes/Identifier.swift; sourceTree = "<group>"; };
 		1669C13B233F03820016AEBA /* SimplePagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SimplePagerViewController.swift; path = LittleHelpers/Classes/SimplePagerViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				1642323F2343F21F0062BF41 /* Identifier.swift */,
 				1605AABD234E607600F7BC7A /* URLRequestRetryManager.swift */,
 				162777242358F67400479D10 /* UIKitLivePreviewExtensions.swift */,
+				163C05CB235943EB00F21EF8 /* UIControl+Tap.swift */,
 			);
 			name = LittleHelpers;
 			path = ../..;
@@ -435,6 +438,7 @@
 				16BD45F8232C4DCB0085AD1C /* ObservationToken.swift in Sources */,
 				1669C13C233F03820016AEBA /* SimplePagerViewController.swift in Sources */,
 				16BD45FC232C4DCB0085AD1C /* AsyncOperation.swift in Sources */,
+				163C05CC235943EB00F21EF8 /* UIControl+Tap.swift in Sources */,
 				164232402343F21F0062BF41 /* Identifier.swift in Sources */,
 				16BD45FD232C4DCB0085AD1C /* ChildViewController.swift in Sources */,
 			);
