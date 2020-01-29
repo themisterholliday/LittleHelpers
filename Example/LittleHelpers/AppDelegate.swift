@@ -9,15 +9,29 @@
 import UIKit
 import LittleHelpers
 
+class TheData: ChipCollectionViewControllerDataSource {
+    var chipModels: [ChipModel] = [test()]
+}
+
+struct test: ChipModel {
+    var title = "Testing@testingtesting.com"
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var data = TheData()
+
+    lazy var vc = ChipCollectionViewController.init(dataSource: data, delegate: self)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let vc = SimplePagerViewController(viewControllers: [RedViewController(), GreenViewController(), BlueViewController()])
+        _ = SimplePagerViewController(viewControllers: [RedViewController(), GreenViewController(), BlueViewController()])
+
+        vc.collectionView.backgroundColor = .white
+        vc.render(clearTextField: false)
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
         return true
@@ -48,6 +62,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: ChipCollectionViewControllerDelegate {
+    func chipViewTextFieldDidEndEditing() {
+
+    }
+
+    func chipViewTextFieldDidChange(text: String?) {
+
+    }
+
+    func chipViewTextFieldDidReturn(text: String?) {
+        guard let text = text else { return }
+        var item = test()
+        item.title = text
+        self.data.chipModels.append(item)
+        vc.render(clearTextField: true)
+    }
+
+    func chipViewDidDelete(at indexPath: IndexPath) {
+        self.data.chipModels.remove(at: indexPath.row)
+        vc.render(clearTextField: false)
+    }
+
+    func chipViewTextFieldDidBeginEditing() {
+
+    }
+}
 
 
 class RedViewController: UIViewController {
