@@ -40,6 +40,6 @@ public extension UIViewController {
             vc.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             vc.view.topAnchor.constraint(equalTo: containerView.topAnchor),
             vc.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            ])
+        ])
     }
 }

@@ -43,7 +43,7 @@ public class SimplePagerViewController: UIViewController {
 
     private func addPageControl() {
         pageControl.numberOfPages = viewControllers.count
-        self.view.addSubview(pageControl)
+        view.addSubview(pageControl)
 
         pageControl.translatesAutoresizingMaskIntoConstraints = false
 

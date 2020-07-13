@@ -16,25 +16,25 @@ open class AsynchronousOperation: Operation {
         fileprivate var keyPath: String { return "is" + self.rawValue }
     }
 
-    override public var isAsynchronous: Bool {
+    public override var isAsynchronous: Bool {
         return true
     }
 
-    override public var isExecuting: Bool {
-        return state == .executing
+    public override var isExecuting: Bool {
+        return self.state == .executing
     }
 
-    override public var isFinished: Bool {
-        return state == .finished
+    public override var isFinished: Bool {
+        return self.state == .finished
     }
 
     public var state = State.ready {
         willSet {
-            willChangeValue(forKey: state.keyPath)
+            willChangeValue(forKey: self.state.keyPath)
             willChangeValue(forKey: newValue.keyPath)
         }
         didSet {
-            didChangeValue(forKey: state.keyPath)
+            didChangeValue(forKey: self.state.keyPath)
             didChangeValue(forKey: oldValue.keyPath)
         }
     }
@@ -48,42 +48,43 @@ open class AsynchronousOperation: Operation {
         return operationQueue
     }()
 
-    override public func start() {
+    public override func start() {
         if self.isCancelled {
-            state = .finished
+            self.state = .finished
         } else {
-            state = .ready
+            self.state = .ready
             self.main()
         }
     }
 
-    override open func main() {
+    open override func main() {
         if self.debugMode { print("AsyncOperation \(self.name ?? "") -  Main function started") }
         if self.isCancelled {
             if self.debugMode { print("AsyncOperation \(self.name ?? "") -  Main function Cancelled") }
-            state = .finished
+            self.state = .finished
         } else {
             if self.debugMode { print("AsyncOperation \(self.name ?? "") -  Main function Executing") }
-            state = .executing
+            self.state = .executing
         }
         if self.debugMode { print("AsyncOperation \(self.name ?? "") -  Main function Ended") }
     }
 
-    override public func cancel() {
+    public override func cancel() {
         super.cancel()
-        operationQueue.cancelAllOperations()
+        self.operationQueue.cancelAllOperations()
     }
 
     func checkIsCancelled() {
         if self.isCancelled {
-            state = .finished
+            self.state = .finished
         }
     }
 }
 
 // MARK: - AsyncOperationExample
-fileprivate class AsyncOperationExample: AsynchronousOperation {
-    override public func main() {
+
+private class AsyncOperationExample: AsynchronousOperation {
+    public override func main() {
         super.main()
         if self.debugMode { print("AsyncOperationExample \(self.name ?? "") - Called async inside operation") }
 
@@ -98,7 +99,7 @@ fileprivate class AsyncOperationExample: AsynchronousOperation {
     }
 }
 
-fileprivate class AsyncOperationQueueExample {
+private class AsyncOperationQueueExample {
     private lazy var asyncOperationQueue: CompletionOperationQueue = {
         let asyncOperationQueue = CompletionOperationQueue { [weak self] in
             self?.completedQueue()
@@ -108,7 +109,7 @@ fileprivate class AsyncOperationQueueExample {
     }()
 
     init() {
-        print("AsyncOperationExample Before Total operations: \(asyncOperationQueue.operationCount)")
+        print("AsyncOperationExample Before Total operations: \(self.asyncOperationQueue.operationCount)")
 
         var previousOperation: AsyncOperationExample?
         for index in 1...10 {
@@ -117,14 +118,13 @@ fileprivate class AsyncOperationQueueExample {
             if let previous = previousOperation {
                 operation.addDependency(previous)
             }
-            asyncOperationQueue.addOperation(operation)
+            self.asyncOperationQueue.addOperation(operation)
 
             previousOperation = operation
         }
 
-
-        print("AsyncOperationExample After Total operations: \(asyncOperationQueue.operationCount)")
-        print("AsyncOperationExample After waiting for operations: \(asyncOperationQueue.operationCount)")
+        print("AsyncOperationExample After Total operations: \(self.asyncOperationQueue.operationCount)")
+        print("AsyncOperationExample After waiting for operations: \(self.asyncOperationQueue.operationCount)")
     }
 
     private func completedQueue() {

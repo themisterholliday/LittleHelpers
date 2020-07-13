@@ -50,7 +50,7 @@ public final class Cache<Key: Hashable, Value> {
 
     public func allValues() -> [Value] {
         let allKeys = keyTracker.keys
-        return allKeys.compactMap({ self.value(forKey: $0) })
+        return allKeys.compactMap { self.value(forKey: $0) }
     }
 
     public func removeValue(forKey key: Key) {
@@ -59,7 +59,7 @@ public final class Cache<Key: Hashable, Value> {
 
     public func removeAllValues() {
         let allKeys = keyTracker.keys
-        allKeys.forEach({ self.removeValue(forKey: $0) })
+        allKeys.forEach { self.removeValue(forKey: $0) }
     }
 }
 
@@ -200,8 +200,8 @@ extension CacheError: LocalizedError {
     }
 }
 
-
 // MARK: - Example
+
 struct Article: Identifiable, Codable {
     let id: Identifier<Article>
     let name: String
@@ -221,7 +221,7 @@ private class ArticleLoader: ModelLoader {
     private let cacheFileName = "articles"
 
     lazy var cache: Cache<Article.RawIdentifier, Article> = {
-        return (try? Cache<Article.RawIdentifier, Article>.loadFromDisk(name: cacheFileName)) ?? Cache<Article.RawIdentifier, Article>()
+        (try? Cache<Article.RawIdentifier, Article>.loadFromDisk(name: cacheFileName)) ?? Cache<Article.RawIdentifier, Article>()
     }()
 
     func loadModel(withID id: Identifier<Article>) throws -> Article {

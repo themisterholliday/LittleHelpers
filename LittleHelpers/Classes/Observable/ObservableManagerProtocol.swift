@@ -18,7 +18,7 @@ public protocol ObservableManager: class {
     var observations: (
         all: [UUID: ([Object]) -> Void],
         single: [UUID: (String, (Object) -> Void)]
-        ) { get set }
+    ) { get set }
 
     func getObject(for id: String) -> Object?
     func getAllObjects() -> [Object]

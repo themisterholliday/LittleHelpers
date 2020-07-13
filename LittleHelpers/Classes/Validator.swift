@@ -27,7 +27,6 @@ func validate<T>(_ value: T,
     try validator.closure(value)
 }
 
-
 // Example
 private extension Validator where Value == String {
     static var password: Validator {

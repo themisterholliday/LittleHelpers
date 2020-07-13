@@ -8,7 +8,6 @@
 import UIKit
 
 private class CallbackWrapper: NSObject, NSCopying {
-
     init(_ callback: @escaping () -> Void) {
         self.callback = callback
     }

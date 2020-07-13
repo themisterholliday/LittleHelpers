@@ -15,12 +15,11 @@ public protocol Navigator {
     func navigate(to destination: Destination)
 }
 
-
 // MARK: - Example Navigator
 
-fileprivate struct User {}
+private struct User {}
 
-fileprivate class LoginNavigator: Navigator {
+private class LoginNavigator: Navigator {
     enum Destination {
         case loginCompleted(user: User)
         case forgotPassword
@@ -52,7 +51,7 @@ fileprivate class LoginNavigator: Navigator {
     }
 }
 
-fileprivate protocol LoginViewControllerFactory {
+private protocol LoginViewControllerFactory {
     func makeWelcomeViewController(forUser: User) -> UIViewController
     func makeSignUpViewController() -> UIViewController
     func makePasswordResetViewController() -> UIViewController

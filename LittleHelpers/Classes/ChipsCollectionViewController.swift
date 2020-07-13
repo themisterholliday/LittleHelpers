@@ -94,22 +94,22 @@ final class ChipCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             leading,
             titleLabel.trailingAnchor.constraint(equalTo: cancelImageView.leadingAnchor),
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
 
         NSLayoutConstraint.activate([
-            deleteButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3),
-            deleteButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            deleteButton.topAnchor.constraint(equalTo: self.topAnchor),
-            deleteButton.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            deleteButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3),
+            deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            deleteButton.topAnchor.constraint(equalTo: topAnchor),
+            deleteButton.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
 
         NSLayoutConstraint.activate([
-            cancelImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2),
-            cancelImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            cancelImageView.topAnchor.constraint(equalTo: self.topAnchor),
-            cancelImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            cancelImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2),
+            cancelImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cancelImageView.topAnchor.constraint(equalTo: topAnchor),
+            cancelImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
 
         deleteButton.tap = { [weak self] in
@@ -180,8 +180,8 @@ public final class ChipCollectionViewController: UICollectionViewController {
         }
 
         let diff = diffChanges(previousData, dataSource.chipModels, with: { (lhs, rhs) -> Bool in
-            return lhs.title == rhs.title
-        }, updatesCompare: { _,_ in return false })
+            lhs.title == rhs.title
+        }, updatesCompare: { _, _ in false })
 
         let insertedIndexPaths = diff.insertedIndexPaths ?? []
         let deletedIndexPaths = diff.deletedIndexPaths ?? []
@@ -250,7 +250,7 @@ extension ChipCollectionViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: 200, height: 32)
         }
 
-        guard let viewModel = self.dataSource.chipModels[safe: indexPath.row] else {
+        guard let viewModel = dataSource.chipModels[safe: indexPath.row] else {
             return CGSize(width: 200, height: 32)
         }
 
@@ -295,7 +295,7 @@ final class ChipsFlowLayout: UICollectionViewFlowLayout {
         var leftMargin = sectionInset.left // initalized to silence compiler, and actaully safer, but not planning to use.
         var maxY: CGFloat = -1.0
 
-        //this loop assumes attributes are in IndexPath order
+        // this loop assumes attributes are in IndexPath order
         for attribute in attributes ?? [] {
             if attribute.frame.origin.y >= maxY {
                 leftMargin = sectionInset.left

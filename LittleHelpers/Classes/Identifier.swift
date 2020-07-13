@@ -23,6 +23,7 @@ public struct Identifier<Value: Identifiable> {
 }
 
 // MARK: - ExpressibleByStringLiteral conformance
+
 extension Identifier: ExpressibleByStringLiteral where Value.RawIdentifier == String {
     public typealias StringLiteralType = String
 
@@ -40,6 +41,7 @@ extension Identifier: ExpressibleByExtendedGraphemeClusterLiteral where Value.Ra
 }
 
 // MARK: - ExpressibleByIntegerLiteral Conformance
+
 extension Identifier: ExpressibleByIntegerLiteral where Value.RawIdentifier == Int {
     public typealias IntegerLiteralType = Int
 
@@ -49,6 +51,7 @@ extension Identifier: ExpressibleByIntegerLiteral where Value.RawIdentifier == I
 }
 
 // MARK: - CustomStringConvertible
+
 extension Identifier: CustomStringConvertible {
     public var description: String {
         return String(describing: rawValue)
@@ -56,6 +59,7 @@ extension Identifier: CustomStringConvertible {
 }
 
 // MARK: Codable
+
 extension Identifier: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
@@ -70,7 +74,6 @@ extension Identifier: Codable {
 
 extension Identifier: Equatable {}
 extension Identifier: Hashable {}
-
 
 // MARK: - Example
 
@@ -110,7 +113,7 @@ public enum IdentifiableModelError<T: Identifiable>: Error {
 extension IdentifiableModelError: LocalizedError {
     public var errorDescription: String? {
         let className = String(describing: T.self)
-        
+
         switch self {
         case .couldNotFindModelWithID(let id):
             return NSLocalizedString(

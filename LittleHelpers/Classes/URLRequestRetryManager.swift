@@ -42,7 +42,7 @@ private class URLRequestCache {
     private let cacheFileName = "cachedRequests"
 
     private lazy var cache: Cache<UUID, CacheableURLRequest> = {
-        return (try? Cache<UUID, CacheableURLRequest>.loadFromDisk(name: cacheFileName)) ?? Cache<UUID, CacheableURLRequest>()
+        (try? Cache<UUID, CacheableURLRequest>.loadFromDisk(name: cacheFileName)) ?? Cache<UUID, CacheableURLRequest>()
     }()
 
     func loadAllRequests() -> [CacheableURLRequest] {
@@ -65,6 +65,7 @@ private class URLRequestCache {
 }
 
 // MARK: - URLRequestRetryManager
+
 public final class URLRequestRetryManager: NSObject {
     private static let ApolloOperationName = "X-APOLLO-OPERATION-NAME"
     private static let OperationsToAlwaysRetry = ["UserProgress", "AddFavorite", "RemoveFavorite"]
@@ -89,9 +90,9 @@ extension URLRequestRetryManager {
         // @AUDIT: Currently there is no limit to the amount of requests that can be made. Should most likely implement an operation queue.
         // @AUDIT: There is also no max retry count but there is a maximum lifetime for the entry in the cache which is defaulted to 12 hours
         let loadedRequests = cache.loadAllRequests()
-        loadedRequests.forEach { (cachedRequest) in
+        loadedRequests.forEach { cachedRequest in
             let urlRequest = cachedRequest.asURLRequest()
-            let dataTask = session.dataTask(with: urlRequest) { [weak self] (_, _, error) in
+            let dataTask = session.dataTask(with: urlRequest) { [weak self] _, _, error in
                 if let error = error {
                     print(error)
                     return

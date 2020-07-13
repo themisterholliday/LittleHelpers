@@ -9,7 +9,6 @@
 import Foundation
 
 public class CompletionOperationQueue: OperationQueue {
-
     public var completionBlock: (() -> Void)?
 
     public init(completionBlock: (() -> Void)? = nil) {
@@ -18,7 +17,7 @@ public class CompletionOperationQueue: OperationQueue {
         addObserver(self, forKeyPath: "operationCount", options: NSKeyValueObservingOptions.new, context: .none)
     }
 
-    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if let keyPath = keyPath, keyPath == "operationCount", operationCount == 0 {
             completionBlock?()
         }
