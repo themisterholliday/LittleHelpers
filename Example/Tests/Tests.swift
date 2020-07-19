@@ -15,7 +15,15 @@ class Tests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        
+        let disptach = EventDispatcher(value: "String")
+        disptach.observe(self, distinct: true) { (self, value) in
+            print("$$$ ---- \(value) ----")
+            print("$$$ –––––")
+        }
+        disptach.value = "String"
+        disptach.value = "Hello"
+        disptach.value = "Hello"
     }
     
     func testPerformanceExample() {

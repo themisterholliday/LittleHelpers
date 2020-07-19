@@ -11,6 +11,9 @@
 		163C05CC235943EB00F21EF8 /* UIControl+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C05CB235943EB00F21EF8 /* UIControl+Tap.swift */; };
 		1642323E2343E7040062BF41 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642323D2343E7040062BF41 /* Cache.swift */; };
 		164232402343F21F0062BF41 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642323F2343F21F0062BF41 /* Identifier.swift */; };
+		166360D624C4D5DD0051DB77 /* EventDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166360D524C4D5DD0051DB77 /* EventDispatcher.swift */; };
+		166360D824C4F0020051DB77 /* ViewControllerWithDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166360D724C4F0020051DB77 /* ViewControllerWithDelegate.swift */; };
+		166360DB24C4F02B0051DB77 /* ViewModelExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166360DA24C4F02B0051DB77 /* ViewModelExample.swift */; };
 		166746EC239A025D0048A19A /* ChipsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166746EB239A025D0048A19A /* ChipsCollectionViewController.swift */; };
 		1669C13C233F03820016AEBA /* SimplePagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669C13B233F03820016AEBA /* SimplePagerViewController.swift */; };
 		1682A75324BD246F0075CD77 /* JSONString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1682A75224BD246F0075CD77 /* JSONString.swift */; };
@@ -59,6 +62,9 @@
 		163C05CB235943EB00F21EF8 /* UIControl+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIControl+Tap.swift"; path = "LittleHelpers/Classes/UIControl+Tap.swift"; sourceTree = "<group>"; };
 		1642323D2343E7040062BF41 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = LittleHelpers/Classes/Cache.swift; sourceTree = "<group>"; };
 		1642323F2343F21F0062BF41 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = LittleHelpers/Classes/Identifier.swift; sourceTree = "<group>"; };
+		166360D524C4D5DD0051DB77 /* EventDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDispatcher.swift; sourceTree = "<group>"; };
+		166360D724C4F0020051DB77 /* ViewControllerWithDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWithDelegate.swift; sourceTree = "<group>"; };
+		166360DA24C4F02B0051DB77 /* ViewModelExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelExample.swift; sourceTree = "<group>"; };
 		166746EB239A025D0048A19A /* ChipsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChipsCollectionViewController.swift; path = LittleHelpers/Classes/ChipsCollectionViewController.swift; sourceTree = "<group>"; };
 		1669C13B233F03820016AEBA /* SimplePagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SimplePagerViewController.swift; path = LittleHelpers/Classes/SimplePagerViewController.swift; sourceTree = "<group>"; };
 		1682A75224BD246F0075CD77 /* JSONString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JSONString.swift; path = LittleHelpers/Classes/JSONString.swift; sourceTree = "<group>"; };
@@ -135,6 +141,14 @@
 				CC27E166D8A60A11CF338B53D76421A7 /* LittleHelpers */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		166360D924C4F01D0051DB77 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				166360DA24C4F02B0051DB77 /* ViewModelExample.swift */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 		16BD45EE232C4DCB0085AD1C /* Observable */ = {
@@ -235,22 +249,25 @@
 		CC27E166D8A60A11CF338B53D76421A7 /* LittleHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				16BD45F3232C4DCB0085AD1C /* AsyncOperations */,
+				166360D924C4F01D0051DB77 /* Examples */,
 				1642323D2343E7040062BF41 /* Cache.swift */,
 				16BD45F6232C4DCB0085AD1C /* ChildViewController.swift */,
 				166746EB239A025D0048A19A /* ChipsCollectionViewController.swift */,
+				166360D524C4D5DD0051DB77 /* EventDispatcher.swift */,
 				1642323F2343F21F0062BF41 /* Identifier.swift */,
 				1682A75224BD246F0075CD77 /* JSONString.swift */,
 				16BD45F2232C4DCB0085AD1C /* LinkedList.swift */,
 				16BD45F1232C4DCB0085AD1C /* Navigator.swift */,
-				16BD45EE232C4DCB0085AD1C /* Observable */,
-				3271C3DF143CE9D0822E80AB537BADAA /* Pod */,
 				1669C13B233F03820016AEBA /* SimplePagerViewController.swift */,
-				B6754513947B7760DEDE0D2A7672453C /* Support Files */,
 				163C05CB235943EB00F21EF8 /* UIControl+Tap.swift */,
 				162777242358F67400479D10 /* UIKitLivePreviewExtensions.swift */,
 				1682A75424BD24E80075CD77 /* URLRequestRetryManager.swift */,
 				16852D3A23343D2E005133D0 /* Validator.swift */,
+				16BD45F3232C4DCB0085AD1C /* AsyncOperations */,
+				16BD45EE232C4DCB0085AD1C /* Observable */,
+				3271C3DF143CE9D0822E80AB537BADAA /* Pod */,
+				B6754513947B7760DEDE0D2A7672453C /* Support Files */,
+				166360D724C4F0020051DB77 /* ViewControllerWithDelegate.swift */,
 			);
 			name = LittleHelpers;
 			path = ../..;
@@ -433,7 +450,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				166360D824C4F0020051DB77 /* ViewControllerWithDelegate.swift in Sources */,
+				166360DB24C4F02B0051DB77 /* ViewModelExample.swift in Sources */,
 				1682A75324BD246F0075CD77 /* JSONString.swift in Sources */,
+				166360D624C4D5DD0051DB77 /* EventDispatcher.swift in Sources */,
 				166746EC239A025D0048A19A /* ChipsCollectionViewController.swift in Sources */,
 				16BD45F7232C4DCB0085AD1C /* ObservableManagerProtocol.swift in Sources */,
 				16852D3B23343D2E005133D0 /* Validator.swift in Sources */,
