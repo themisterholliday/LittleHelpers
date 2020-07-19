@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LittleHelpers'
-  s.version          = '0.1.8'
+  s.version          = '0.1.9'
   s.summary          = 'LittleHelpers is a collection of classes and protocols that I often use.'
   s.homepage         = 'https://github.com/themisterholliday/LittleHelpers'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
