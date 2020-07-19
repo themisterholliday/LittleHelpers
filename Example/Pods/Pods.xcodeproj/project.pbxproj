@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160BDFCE24C505890070B143 /* ViewModelExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BDFCD24C505890070B143 /* ViewModelExample.swift */; };
+		160BDFD124C505950070B143 /* ViewControllerWithDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BDFCF24C505950070B143 /* ViewControllerWithDelegate.swift */; };
+		160BDFD224C505950070B143 /* EventDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BDFD024C505950070B143 /* EventDispatcher.swift */; };
 		162777252358F67400479D10 /* UIKitLivePreviewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162777242358F67400479D10 /* UIKitLivePreviewExtensions.swift */; };
 		163C05CC235943EB00F21EF8 /* UIControl+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C05CB235943EB00F21EF8 /* UIControl+Tap.swift */; };
 		1642323E2343E7040062BF41 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642323D2343E7040062BF41 /* Cache.swift */; };
 		164232402343F21F0062BF41 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642323F2343F21F0062BF41 /* Identifier.swift */; };
-		166360D624C4D5DD0051DB77 /* EventDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166360D524C4D5DD0051DB77 /* EventDispatcher.swift */; };
-		166360D824C4F0020051DB77 /* ViewControllerWithDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166360D724C4F0020051DB77 /* ViewControllerWithDelegate.swift */; };
-		166360DB24C4F02B0051DB77 /* ViewModelExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166360DA24C4F02B0051DB77 /* ViewModelExample.swift */; };
 		166746EC239A025D0048A19A /* ChipsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166746EB239A025D0048A19A /* ChipsCollectionViewController.swift */; };
 		1669C13C233F03820016AEBA /* SimplePagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669C13B233F03820016AEBA /* SimplePagerViewController.swift */; };
 		1682A75324BD246F0075CD77 /* JSONString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1682A75224BD246F0075CD77 /* JSONString.swift */; };
@@ -58,13 +58,13 @@
 		0447C4EAF4890BC1DCDCEA16A9D58E4E /* Pods-LittleHelpers_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LittleHelpers_Tests-Info.plist"; sourceTree = "<group>"; };
 		0C624AAC236D6C59F40273B3730CC473 /* Pods-LittleHelpers_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LittleHelpers_Example.modulemap"; sourceTree = "<group>"; };
 		0F401A1BCE869143D48DE6A55C7CA623 /* LittleHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LittleHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		160BDFCD24C505890070B143 /* ViewModelExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelExample.swift; path = LittleHelpers/Classes/Examples/ViewModelExample.swift; sourceTree = "<group>"; };
+		160BDFCF24C505950070B143 /* ViewControllerWithDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerWithDelegate.swift; path = LittleHelpers/Classes/ViewControllerWithDelegate.swift; sourceTree = "<group>"; };
+		160BDFD024C505950070B143 /* EventDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDispatcher.swift; path = LittleHelpers/Classes/EventDispatcher.swift; sourceTree = "<group>"; };
 		162777242358F67400479D10 /* UIKitLivePreviewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIKitLivePreviewExtensions.swift; path = LittleHelpers/Classes/UIKitLivePreviewExtensions.swift; sourceTree = "<group>"; };
 		163C05CB235943EB00F21EF8 /* UIControl+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIControl+Tap.swift"; path = "LittleHelpers/Classes/UIControl+Tap.swift"; sourceTree = "<group>"; };
 		1642323D2343E7040062BF41 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = LittleHelpers/Classes/Cache.swift; sourceTree = "<group>"; };
 		1642323F2343F21F0062BF41 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = LittleHelpers/Classes/Identifier.swift; sourceTree = "<group>"; };
-		166360D524C4D5DD0051DB77 /* EventDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDispatcher.swift; sourceTree = "<group>"; };
-		166360D724C4F0020051DB77 /* ViewControllerWithDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWithDelegate.swift; sourceTree = "<group>"; };
-		166360DA24C4F02B0051DB77 /* ViewModelExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelExample.swift; sourceTree = "<group>"; };
 		166746EB239A025D0048A19A /* ChipsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChipsCollectionViewController.swift; path = LittleHelpers/Classes/ChipsCollectionViewController.swift; sourceTree = "<group>"; };
 		1669C13B233F03820016AEBA /* SimplePagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SimplePagerViewController.swift; path = LittleHelpers/Classes/SimplePagerViewController.swift; sourceTree = "<group>"; };
 		1682A75224BD246F0075CD77 /* JSONString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JSONString.swift; path = LittleHelpers/Classes/JSONString.swift; sourceTree = "<group>"; };
@@ -141,14 +141,6 @@
 				CC27E166D8A60A11CF338B53D76421A7 /* LittleHelpers */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		166360D924C4F01D0051DB77 /* Examples */ = {
-			isa = PBXGroup;
-			children = (
-				166360DA24C4F02B0051DB77 /* ViewModelExample.swift */,
-			);
-			path = Examples;
 			sourceTree = "<group>";
 		};
 		16BD45EE232C4DCB0085AD1C /* Observable */ = {
@@ -249,11 +241,12 @@
 		CC27E166D8A60A11CF338B53D76421A7 /* LittleHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				166360D924C4F01D0051DB77 /* Examples */,
+				160BDFD024C505950070B143 /* EventDispatcher.swift */,
+				160BDFCF24C505950070B143 /* ViewControllerWithDelegate.swift */,
+				160BDFCD24C505890070B143 /* ViewModelExample.swift */,
 				1642323D2343E7040062BF41 /* Cache.swift */,
 				16BD45F6232C4DCB0085AD1C /* ChildViewController.swift */,
 				166746EB239A025D0048A19A /* ChipsCollectionViewController.swift */,
-				166360D524C4D5DD0051DB77 /* EventDispatcher.swift */,
 				1642323F2343F21F0062BF41 /* Identifier.swift */,
 				1682A75224BD246F0075CD77 /* JSONString.swift */,
 				16BD45F2232C4DCB0085AD1C /* LinkedList.swift */,
@@ -267,7 +260,6 @@
 				16BD45EE232C4DCB0085AD1C /* Observable */,
 				3271C3DF143CE9D0822E80AB537BADAA /* Pod */,
 				B6754513947B7760DEDE0D2A7672453C /* Support Files */,
-				166360D724C4F0020051DB77 /* ViewControllerWithDelegate.swift */,
 			);
 			name = LittleHelpers;
 			path = ../..;
@@ -450,10 +442,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				166360D824C4F0020051DB77 /* ViewControllerWithDelegate.swift in Sources */,
-				166360DB24C4F02B0051DB77 /* ViewModelExample.swift in Sources */,
+				160BDFD124C505950070B143 /* ViewControllerWithDelegate.swift in Sources */,
 				1682A75324BD246F0075CD77 /* JSONString.swift in Sources */,
-				166360D624C4D5DD0051DB77 /* EventDispatcher.swift in Sources */,
+				160BDFCE24C505890070B143 /* ViewModelExample.swift in Sources */,
 				166746EC239A025D0048A19A /* ChipsCollectionViewController.swift in Sources */,
 				16BD45F7232C4DCB0085AD1C /* ObservableManagerProtocol.swift in Sources */,
 				16852D3B23343D2E005133D0 /* Validator.swift in Sources */,
@@ -468,6 +459,7 @@
 				1669C13C233F03820016AEBA /* SimplePagerViewController.swift in Sources */,
 				16BD45FC232C4DCB0085AD1C /* AsyncOperation.swift in Sources */,
 				163C05CC235943EB00F21EF8 /* UIControl+Tap.swift in Sources */,
+				160BDFD224C505950070B143 /* EventDispatcher.swift in Sources */,
 				164232402343F21F0062BF41 /* Identifier.swift in Sources */,
 				16BD45FD232C4DCB0085AD1C /* ChildViewController.swift in Sources */,
 			);
