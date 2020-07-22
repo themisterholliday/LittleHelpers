@@ -18,13 +18,9 @@ public class EventDispatcher<T: Equatable> {
             let isValueDistinct = oldValue != newValue
 
             observers.values.forEach { isDistinct, completionHandler in
-                print(oldValue, newValue)
-                print(isDistinct, isValueDistinct)
                 if isDistinct, isValueDistinct == false {
                     return
                 }
-                print("is past")
-                print("-----")
                 completionHandler(newValue)
             }
         }
@@ -47,10 +43,13 @@ public class EventDispatcher<T: Equatable> {
     ///   - closure: The callback which will contain (The based in observer, The update value that is being observed)
     public func observe<O: AnyObject>(_ observer: O,
                                       distinct: Bool = false,
+                                      skip: Int = 0,
                                       onQueue queue: DispatchQueue = .main,
                                       closure: @escaping (O, T) -> Void) {
         let initialValue = value
         let uuid = UUID()
+        
+        var skipsLeft = skip
 
         let completionHandler: CompletionHandler = { [weak self, weak observer] newValue in
             guard let observer = observer else {
@@ -58,6 +57,10 @@ public class EventDispatcher<T: Equatable> {
                 return
             }
 
+            if skipsLeft > 0 {
+                skipsLeft -= 1
+                return
+            }
             queue.async {
                 closure(observer, newValue)
             }
@@ -65,9 +68,12 @@ public class EventDispatcher<T: Equatable> {
 
         observers[uuid] = (distinct, completionHandler)
 
-        queue.async {
-            closure(observer, initialValue)
+        if skipsLeft == 0 {
+            queue.async {
+                closure(observer, initialValue)
+            }
         }
+        skipsLeft -= 1
     }
 }
 
